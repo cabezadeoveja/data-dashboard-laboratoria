@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+<body>
+<header>
+  <nav class="horizonral">
+    <div class="brand">
+      <img src="assets/images/logo-laboratoria.svg">      
+    </div>
+
+    <div class="saludo">
+      <p class="saludo"><b>Hola</b>, Valentina <p>      
+    </div>
+
+    <div class="profile">
+      <img src="assets/images/valentina.jpg" class="valentina">
+    </div>
+
+    <div class="msj">
+      <a href="#"> <i class="fa fa-envelope-o" aria-hidden="true"></i> </a>
+    </div>
+
+    <div class="logout">
+      <a href="#"><p class="logout">Logout</p>
+      <i class="fa fa-power-off" aria-hidden="true"></i></a>
+    </div>
+  </nav>
+</header>
+
+  <nav class="vertical">
+    <ul class="menuvertical">
+    <li class="listavertical"> <a href="#">
+     <i class="fa fa-home" aria-hidden="true"></i>
+    <br> Dashboard </a></li>
+
+    <li class="listavertical"> <a href="#">
+     <i class="fa fa-graduation-cap" aria-hidden="true"></i> 
+    <br> Add Students </a></li>
+
+    <li class="listavertical"> <a href="#">
+     <i class="fa fa-trash" aria-hidden="true"></i>
+    <br> Remove Students </a></li>
+
+    <li class="listavertical"> <a href="#">
+     <i class="fa fa-plus" aria-hidden="true"></i>
+    <br> Add Sprint </a></li>
+    </ul>
+  </nav>
+
+<section id="container">
+
+  <div id="contenedor">
+
+  <div> 
+    <h1 id="dashboard">Dashboard SCL 2017 - 2
+    <i class="fa fa-sort-desc" aria-hidden="true" onclick="add()"></i>
+    </h1>
+  </div>
+
+  <div id="divBoton" style="visibility: hidden;">
+    <h3>Lima</h3>
+    <hr>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2015 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2015 - II</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2016 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2016 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2017 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2017 - II</span><br>
+    <h3>Arequipa</h3>
+    <hr>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2015 - I<span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2016 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2016 - II</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2017 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2017 - II</span><br>
+    <h3>Santiago de Chile</h3>
+    <hr>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2015 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2016 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2016 - II</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2017 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2017 - II</span><br>
+    <h3>Ciudad de México</h3>
+    <hr>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2015 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2016 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2016 - II</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2017 - I</span><br>
+    <i class="fa fa-square-o" aria-hidden="true"></i><span>2017 - II</span><br>
+  </div>
+
+  <div class="menu-local">
+    <ul class="local">
+          <li class="listalocal" id="overview"> <a class="a2" href="#"> Overview </a></li>
+          <li class="listalocal" id="students"> <a class="a2" href="#">Students </a></li>
+          <li class="listalocal" id="teachers"> <a class="a2" href="#">Teachers </a></li>
+        </ul>   
+    </div>
+
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+  <section id="container1">
+    <!--Div grafico 1-->
+    <div id="graficos">
+    <div class="grafico1"> 
+      <div class="parrafo">
+        <h4>Enrollment</h4>
+      </div>
+
+    <div id="info1">
+      <h3 id="h31"></h3>
+      <p id="parr1" class="pgraficos"> Students currently <br> enrolled</p>
+    </div>
+
+    <div id="info1">
+      <h3>20%</h3>
+      <p class="pgraficos"> % Dropout <br><br></p>
+    </div>
+
+      <div id="barchart_values"></div>
+    </div> 
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+   
+    <!--Div grafico 2-->
+    <div class="grafico2"> 
+      <div class="parrafo">
+        <h4>Archievement</h4>
+      </div>
+
+    <div id="info2">
+      <h3 id="h32"></h3>
+      <p id="parr2" class="pgraficos"> Students that meet <br> the target</p>
+    </div>
+
+    <div id="info2">
+      <h3>78%</h3>
+      <p class="pgraficos"> % Of Total (135) <br><br></p>
+    </div>
+
+      <div id="chart_div"> </div>
+    </div> 
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <!--Div grafico 3-->
+    <div class="grafico3">
+      <div class="parrafo">
+        <h4>Net Promoter Score</h4>
+      </div>    
+
+    <div id="info3">
+      <h3 id="h33"></h3>
+      <p id="parr3" class="pgraficos"> % Cumulative <br> NPS <br></p>
+    </div>
+
+    <div id="info3">
+      <p class="pgraficos" align="left"> 60% Promoters<br> 30% Passive <br> 10% Detractors</p>
+    </div>
+
+     <div id="chart_div2"> </div>
+    </div> 
+   
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <!--Div grafico 4-->
+    <div class="grafico4">
+      <div class="parrafo">
+        <h4>Tech Skills</h4>
+      </div> 
+
+    <div id="info4">
+      <h3>90</h3>
+      <p class="pgraficos"> Students That Meet <br> The Target</p>
+    </div>
+
+    <div id="info4">
+      <h3>62</h3>
+      <p class="pgraficos"> % Of Total (135) <br><br></p>
+    </div>
+
+    <!--Div grafico 4.1-->
+     <div>
+     <div id="chart_div3"> </div>
+    <!--Div grafico 4.2-->
+     <div id="donutchart"> </div>
+     </div>
+    </div>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <!--Div grafico 5-->    
+    <div class="grafico5">
+      <div class="parrafo">
+        <h4>Life Skills</h4>
+      </div>     
+
+    <div id="info5">
+      <h3>80</h3>
+      <p class="pgraficos"> Students That Meet <br> The Target</p>
+    </div>
+
+    <div id="info5">
+      <h3>62</h3>
+      <p class="pgraficos"> % Of Total (135) <br><br></p>
+    </div>
+
+    <!--Div grafico 5.1-->
+    <div></div>
+     <div id="donutchart2"> </div>
+    <!--Div grafico 5.2-->
+     <div id="chart_div4"> </div>
+    </div>
+    </div>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <!--Div grafico 6-->
+    <div class="grafico6">
+      <div class="parrafo">
+        <h4>Students Satisfaction</h4>
+      </div>   
+
+    <div id="info6">
+      <h3>140</h3>
+      <p class="pgraficos"> % Meeting or exceeding<br> expectation (cumulative)</p>
+    </div>
+
+     <div id="chart_div5"> </div>
+    </div>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <!--Div grafico 7-->
+    <div class="grafico7">
+      <div class="parrafo">
+        <h4>Teacher Rating</h4>
+      </div>
+
+    <div id="info7">
+      <h3>4.2</h3>
+      <p class="pgraficos"> Overall Teacher Rating <br> (cumulative)</p>
+    </div>
+
+     <div id="chart_div6"> </div>
+    </div>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <!--Div grafico 8-->
+    <div class="grafico8">
+      <div class="parrafo">
+        <h4>Jedi Master Rating</h4>
+      </div>  
+
+    <div id="info8">
+      <h3>50</h3>
+      <p class="pgraficos"> Overall Jedi Rating <br> (cumulative)</p>
+    </div>
+
+     <div id="chart_div7"> </div>
+    </div>
+  </div>
+<!-- //////////////////////////////////////////////////////////////////////// -->
+  </section>
+</section>
+<!-- ///////////////////////// FIN PARTE 1 ////////////////////////////////// -->
+
+<section id="container2">
+  <div class="Specialización">
+      <ul class="menuSpecializacion">
+        <li class="a3"> <h5> SPECIALIZATION:</h5> </li>
+        <li class="a3"> <div class="check"></div> <span>Javascript</span> </li>
+        <li class="a3"> <div class="check"></div> <span>UX Design</span> </li>
+        <li class="a3"> <div class="check"></div> <span>Frontend Designer</span> </li>
+      </ul>
+  <div class="buscador">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <input type="buscador">
+  </div>
+  </div>
+
+<!-- ///////////////////// EMPIEZA SLIDER /////////////////////////////////// -->  
+  
+  <div class="containerSlyder">
+    <h5 class="tituloPremiadas">PREMIADAS <b>SPRINT #1</b></h5>
+  <div class="slider" style="max-width:500px">
+    <img class="mySlides" src="assets/images/laboratoria1.jpg" style="width:100%">
+    <img class="mySlides" src="assets/images/laboratoria2.jpg" style="width:100%">
+    <img class="mySlides" src="assets/images/laboratoria3.jpg" style="width:100%">
+  </div>
+  </div>
+
+<!-- ///////////////////// ALUMNA1 /////////////////////////////////// -->
+
+  <div class="containerFicha">
+  <div class="ficha">
+    <img class="img-students" src="assets/images/alumna1.jpg">
+    <div class="ficha-datos">
+      <p class="nombre"> KARINA LAROZE </p>
+      <p class="area"> Maquetadora </p>
+    </div>
+    <div class="containerSkills">
+    <div id="info2">
+      <h3>68%</h3>
+      <p class="pgraficos2"> Tech </p>
+    </div>
+
+    <div id="info2">
+      <h3>78%</h3>
+      <p class="pgraficos2"> Life </p>
+    </div>
+
+    <div id="info2">
+      <h3>Intermiedio</h3>
+      <p class="pgraficos2"> Inglés </p>
+    </div>
+    </div>
+  </div>
+  </div>
+
+<!-- ///////////////////// ALUMNA2 /////////////////////////////////// -->
+
+  <div class="containerFicha">
+  <div class="ficha">
+    <img class="img-students" src="assets/images/alumna2.jpg">
+    <div class="ficha-datos">
+      <p class="nombre"> LAURA PELAEZ </p>
+      <p class="area"> Frontend Developer </p>
+    </div>
+
+    <div class="containerSkills">
+    <div id="info2">
+      <h3>87%</h3>
+      <p class="pgraficos2"> Tech </p>
+    </div>
+
+    <div id="info2">
+      <h3>92%</h3>
+      <p class="pgraficos2"> Life </p>
+    </div>
+
+    <div id="info2">
+      <h3>Avanzado</h3>
+      <p class="pgraficos2"> Inglés </p>
+    </div>
+    </div>
+  </div>
+  </div>
+
+<!-- ///////////////////// ALUMNA3 /////////////////////////////////// -->
+
+  <div class="containerFicha">
+  <div class="ficha">
+    <img class="img-students" src="assets/images/alumna3.jpg">
+    <div class="ficha-datos">
+      <p class="nombre"> MARION CASTILLO </p>
+      <p class="area"> Frontend Developer </p>
+    </div>
+
+    <div class="containerSkills">
+    <div id="info2">
+      <h3>72%</h3>
+      <p class="pgraficos2"> Tech </p>
+    </div>
+
+    <div id="info2">
+      <h3>86%</h3>
+      <p class="pgraficos2"> Life </p>
+    </div>
+
+    <div id="info2">
+      <h3>Básico</h3>
+      <p class="pgraficos2"> Inglés </p>
+    </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ///////////////////// ALUMNA4 /////////////////////////////////// -->
+
+  <div class="containerFicha">
+  <div class="ficha">
+    <img class="img-students" src="assets/images/alumna4.jpg">
+    <div class="ficha-datos">
+      <p class="nombre"> VALENTINA LÓPEZ </p>
+      <p class="area"> Frontend Developer </p>
+    </div>
+
+    <div class="containerSkills">
+    <div id="info2">
+      <h3>75%</h3>
+      <p class="pgraficos2"> Tech </p>
+    </div>
+
+    <div id="info2">
+      <h3>80%</h3>
+      <p class="pgraficos2"> Life </p>
+    </div>
+
+    <div id="info2">
+      <h3>Avanzado</h3>
+      <p class="pgraficos2"> Inglés </p>
+    </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ///////////////////// ALUMNA5 /////////////////////////////////// -->
+
+  <div class="containerFicha">
+    <div class="ficha">
+      <img class="img-students" src="assets/images/alumna5.jpg">
+      <div class="ficha-datos">
+        <p class="nombre"> DANIELA MEDINA </p>
+        <p class="area"> Maquetadora </p>
+      </div>
+
+      <div class="containerSkills">
+        <div id="info2">
+         <h3>75%</h3>
+         <p class="pgraficos2"> Tech </p>
+        </div>
+
+        <div id="info2">
+          <h3>80%</h3>
+          <p class="pgraficos2"> Life </p>
+        </div>
+
+        <div id="info2">
+          <h3>Avanzado</h3>
+          <p class="pgraficos2"> Inglés </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+<section id="container3">
+  <div class="profesores">
+  <div class="teamtext">
+    <h2> TEAM <b>LABORATORIA CHILE</b></h2>
+    <h2 class="profesores2017"> SCL 2017 </h2>
+  </div>  
+    <a href="#" original-title="BELEN" class="tooltip"> <img src="assets/images/P1.jpg" class="profesoresImg"> </a>
+    <a href="#" original-title="ALEXANDRA" class="tooltip"> <img src="assets/images/P2.jpg" class="profesoresImg"> </a>
+    <a href="#" original-title="NADIA" class="tooltip"> <img src="assets/images/P3.jpg" class="profesoresImg"> </a>
+    <br>
+    <a href="#" original-title="FABIAN" class="tooltip"> <img src="assets/images/P4.jpg" class="profesoresImg"> </a>
+    <a href="#" original-title="ALLISON" class="tooltip"> <img src="assets/images/P5.jpg" class="profesoresImg"> </a>
+    <a href="#" original-title="MARCIA" class="tooltip"> <img src="assets/images/P6.jpg" class="profesoresImg"> </a>
+    <br>
+    <a href="#" original-title="VALENTINA" class="tooltip"> <img src="assets/images/P7.jpg" class="profesoresImg"> </a>
+    <a href="#" original-title="ROCIO" class="tooltip"> <img src="assets/images/P8.jpg" class="profesoresImg"> </a>  
+    <a href="#" original-title="DANIELA" class="tooltip"> <img src="assets/images/P9.jpg" class="profesoresImg"> </a>
+    <br>
+    <a href="#" original-title="GABRIEL" class="tooltip"> <img src="assets/images/P10.jpg" class="profesoresImg"> </a>
+    <a href="#" original-title="CARLA" class="tooltip"> <img src="assets/images/P11.jpg" class="profesoresImg"> </a>
+    <a href="#" original-title="JOSE TOMÁS" class="tooltip"> <img src="assets/images/P12.jpg" class="profesoresImg"> </a> 
+  </div>
+</section>
+
+
+		<!-- Base de datos -->
+		<script src="./js/data.js"></script>
+		<!-- Aquí va tus archivos JS -->
+    <script src="js/app.js"></script>  
+
+  </body>
+</html>
